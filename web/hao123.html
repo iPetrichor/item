@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>hao123_上网从这里开始</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 1190px;
+            height: 190px;
+            /* background-color: aqua; */
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+            box-sizing: border-box;
+        }
+        .header .top{
+            width: auto;
+            height: 80px;
+            margin: 0 auto;
+            /* background-color: aquamarine; */
+        }
+        .header .top .first{
+            height: 80px;
+            /* background-color: blueviolet; */
+            padding-top: 30px;
+            box-sizing: border-box;
+            color: darkgrey;
+            font-size: 12px;   
+        }
+        .header .top .first .lianghui{
+            width: 130px;
+            height: 45px;
+            margin-right: 80px;
+            float: left;
+        }
+        .header .top .first .place{
+            width: 86px;
+            height: 48px;
+            margin-right: 40px;
+            /* background-color: crimson; */
+            float: left;
+        }
+        .header .top .first .weather{
+            width: 86px;
+            height: 48px;
+            margin-right: 40px;
+            /* background-color: crimson; */
+            float: left;
+        }
+        .header .top .first .date{
+            width: 140px;
+            height: 48px;
+            /* background-color: crimson; */
+            float: left;
+        }
+        .header .top .first .table{
+            width: auto;
+            height: 48px;
+            /* background-color: crimson; */
+            /* display: inline-block; */
+            float: right;
+            margin-right: 50px;
+        }
+        .header .top .first .table li{
+            /* background-color: crimson; */
+            margin-right: 15px;
+            float: left;
+        }
+        .header .top .first .table li:nth-child(7){
+            clear: both;
+        }
+        /* .header .top .first .table li  */
+        a{
+            text-decoration: none;
+            color: rgba(169, 169, 169, 0.562);
+            font-size: 12px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        .header .top .first .user{
+            float: right;
+            margin-right: 120px;
+        }
+        .header .second{
+            height: 45px;
+            /* background-color: darkkhaki; */
+            box-sizing: border-box;
+            color: darkgrey;
+            font-size: 12px;
+        }
+        .header .second .baidulogo{
+            width: 130px;
+            height: 45px;
+            float: left;
+            margin-left: 130px;
+        }
+        .header .second .list{
+            width: 70px;
+            height: 45px;
+            float: left;
+            box-sizing: border-box;
+            border: 2px solid dodgerblue;
+            border-right: none;
+            border-radius: 12px 0 0 12px;
+            margin-left: 20px;
+            text-align: center;
+        }
+        .header .second .search{
+            width: 495px;
+            height: 45px;
+            float: left;
+            border: 2px solid dodgerblue;
+            border-left: none;
+            border-right: none;
+            box-sizing: border-box;
+        }
+        .header .second .yixia{
+            width: 110px;
+            height: 45px;
+            float: left;
+            box-sizing: border-box;
+            border-left: none;
+            border: 2px solid dodgerblue;
+            border-radius: 0 12px 12px 0;
+            /* background-color: rgb(7, 127, 248); */
+            font-size: 17px;
+        }
+        .header .second .ad{
+            float: left;
+            margin-left: 20px;
+            width: 110px;
+            height: 45px;
+        }
+        .header .third{
+            box-sizing: border-box;
+        }
+        .header .third .ad1{
+            margin-left: 300px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        .header .third .ad2{
+            margin-left: 300px;
+            margin-top: 3px;
+            display: inline-block;
+        }
+        /* 中间开始 */
+        .content{
+            width: 1190px;
+            height: 800px;
+            /* background-color: rgb(229, 255, 0); */
+            margin: 0 auto;
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+        .content .top{
+            width: 1190px;
+            height: 35px;
+            /* background-color: coral; */
+            margin-top: 20px;
+            box-sizing: border-box;
+            border: 1px solid grey;
+        }
+        .content .top a{
+            line-height: 35px;
+            font-size: 14px;
+            color: rgb(44, 43, 38);
+            margin-left: 38px;
+        }
+        .content .mid{
+            width: 1190px;
+            height: 200px;
+            background-color: rgb(224, 28, 136);
+            margin-top: 10px;
+        }
+        .content .mid .first{
+            width: 1190px;
+            height: 100px;
+            background-color: rgb(44, 53, 133);
+        }
+        .content .mid .second{
+            width: 1190px;
+            height: 100px;
+            background-color: rgb(44, 93, 133);
+        }
+        .content .foot{
+            width: 1190px;
+            height: 545px;
+            margin-top: 10px;
+            /* background-color: salmon; */
+        }
+        .content .foot .left{
+            width: 278px;
+            height: 545px;
+            /* background-color: rgb(227, 114, 250); */
+            border: 1px solid grey;
+            float: left;
+        }
+        .content .foot .left .nav{
+            height: 30px;
+        }
+        .content .foot .left .nav ul li{
+            list-style-type: none;            
+            line-height: 30px;
+            margin-left: 19px;
+            float: left;
+        }
+        .content .foot .left .img1{
+            height: 110px;
+            width: 278px;
+            background-repeat: no-repeat;
+            background-image: url(https://hao123-online-img.su.bcebos.com/03-12%2F36.jpg);
+            position: relative;
+        }
+        .content .foot .left .img1 span{
+            font-size: 14px;
+            bottom: 0%;
+            left: 5px;
+            position: absolute;
+        }
+        .content .foot .left .ad a{
+            margin: 0 auto;
+            width: 1190px;
+            font-size: 16px;
+            color: rgb(44, 43, 38);
+            display: inline-block;
+            margin-left: 5px;
+            margin-top: 12px;
+        }
+        .content .foot .left .img2{
+            height: 110px;
+            width: 278px;
+            background-repeat: no-repeat;
+            background-image: url(https://hao123-online-img.su.bcebos.com/03-12%2F38.jpg);
+            position: relative;
+        }
+        .content .foot .left .img2 span{
+            font-size: 14px;
+            bottom: 0%;
+            left: 40px;
+            position: absolute;
+        }
+        .content .foot .right{
+            width: 900px;
+            height: 545px;
+            /* background-color: rgb(227, 114, 250); */
+            border: 1px solid grey;
+            float: right;
+        }
+        .content .foot .right .nav{
+            width: auto;
+            height: 30px;
+        }
+        .content .foot .right .nav ul li{
+            list-style-type: none;            
+            line-height: 30px;
+            margin-left: 39px;
+            float: left;
+        }
+        .content .foot .right .main{
+            width: 900px;
+            height: 515px;
+            background-color: hotpink;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="top">
+            <div class="first">
+                <img src="img/lianghuilogo.png" alt="" class="lianghui">
+                <div class="place"><p>西安&nbsp&nbsp&nbsp&nbsp切换</p><p>七日天气</p></div>
+                <div class="weather"><p>今日&nbsp阴天</p><p>明&nbsp小雨</p></div>
+                <div class="date"><p>3月09日&nbsp星期二</p><p>正月廿六&nbsp星座运势</p></div>
+                <div class="user">
+                    <div>登录</div>
+                    <div>退出</div>
+                </div>
+                <div class="table">
+                    <ul>
+                        <li><a href="#">两会</a></li>
+                        <li><a href="#">地图</a></li>
+                        <li><a href="#">火车票</a></li>
+                        <li><a href="#">出行政策</a></li>
+                        <li><a href="#">违章查询</a></li>
+                        <li><a href="#">网盘</a></li>
+                        <li><a href="#">邮箱</a></li>
+                        <li><a href="#">汇率</a></li>
+                        <li><a href="#">查快递</a></li>
+                        <li><a href="#">彩票开奖</a></li>
+                        <li><a href="#">股票行情</a></li>
+                        <li><a href="#">翻译</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+        <div class="second">
+                <img class="baidulogo" src="img/baidu_logo.png" alt="">
+                <select class="list">
+                    <optgroup>
+                        <option value="">网页</option>
+                        <option value="">音乐</option>
+                        <option value="">视频</option>
+                        <option value="">图片</option>
+                        <option value="">贴吧</option>
+                        <option value="">知道</option>
+                        <option value="">新闻</option>
+                        <option value="">地图</option>
+                        <option value="">更多></option>
+                    </optgroup>
+                </select>
+                <form action="">
+                    <input class="search" type="text" placeholder="搜你想搜">
+                    <input class="yixia" type="button" value="百度一下">
+                </form>
+                <ul class="ad"><li><a href="#">女子贷款13万婚恋网站相亲未果</a></li></ul>
+        </div>
+        <div class="third">
+                <div class="ad1">
+                    <a href="#">十三届全国人大四次会议闭幕</a>&emsp;
+                    <a href="#">复旦大学女生参军到西藏</a>&emsp;
+                    <a href="#">建议明星返还未成年人贵重礼品</a>
+                </div>
+                <div class="ad2">
+                    <a href="#">东部战区回应美军舰穿航台湾海峡</a>&emsp;
+                    <a href="#">全国两会部长们许下的承诺</a>&emsp;
+                    <a href="#">梅西点球被纳瓦斯扑出</a>
+                </div>
+           
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="top">
+            <a href="#">人民网</a>
+            <a href="#">新华网</a>
+            <a href="#">央视网</a>
+            <a href="#">国际在线</a>
+            <a href="#">中国日报</a>
+            <a href="#">中国网</a>
+            <a href="#">中经网</a>
+            <a href="#">光明网</a>
+            <a href="#">央广网</a>
+            <a href="#">求是网</a>
+            <a href="#">中青网</a>
+            <a href="#">网信网</a>
+            <a href="#">西安市政府</a>
+        </div>
+        <div class="mid">
+            <div class="first"></div>
+            <div class="second"></div>
+        </div>
+        <div class="foot">
+            <div class="left">
+                <div class="nav">
+                    <ul>
+                        <li>精选</li>
+                        <li>社会</li>
+                        <li>娱乐</li>
+                        <li>生活</li>
+                        <li>体育</li>
+                    </ul>
+                </div>
+                <div class="img1">
+                    <span>国人餐桌上的"头号杀手"！大部分人都超标</span>
+                </div>
+                <div class="ad">
+                    <a href="">2021全国赏樱地图 樱花全面提前绽放</a>
+                    <a href="">扫码点餐 餐厅也来收割个人信息？</a>
+                    <a href="">地垫该放在屋里还是屋外？现在才知道</a>
+                    <a href="">这些反人类设计 第一个你就忍不了！</a>
+                    <a href="">100个城市消费者满意度排名出炉！</a>
+                    <a href="">快被强迫症逼死了？到底能不能治好？</a>
+                </div>
+                <div class="img2">
+                    <span>羽绒服别急着收！冷空气又来了</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="nav">
+                    <ul>
+                        <li>推荐</li>
+                        <li>视频</li>
+                        <li>娱乐</li>
+                        <li>游戏</li>
+                        <li>体育</li>
+                        <li>视频</li>
+                        <li>汽车</li>
+                        <li>科技</li>
+                        <li>财经</li>
+                        <li>女性</li>
+                        <li>历史</li>
+                        <li>时尚</li> 
+                    </ul>
+                </div>
+                <div class="main"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+
+    </div>
+
+
+</body>
+</html>

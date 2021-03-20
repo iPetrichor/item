@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>新浪首页</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(48, 53, 58);
+        }
+        select{
+            width: 16px;
+            height: 17px;
+        }
+
+
+        .header{
+            width: 970px;
+            height: 320px;
+            /* background-color: lightcoral; */
+            margin: 0 auto;
+        }
+        /* 字体↓ */
+        .header,.nav a{
+            font-size: 12px;
+        }
+        /* 字体↑ */
+        /* 导航条开始 */
+        .nav{
+            width: 100%;
+            height: 45px;
+            position: fixed;
+            border-bottom: 1px solid rgba(252, 247, 247, 0.856);
+            background-color: rgb(251, 251, 251);
+        }
+        .nav .line{
+            width: 970px;
+            height: 45px;
+            /* background-color: indigo; */
+            margin: 0 auto;
+        }
+        .nav .line .item1{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: left;
+            /* background-color: ivory; */
+        }
+        .nav .line .item2{
+            width: 90px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: left;
+            /* background-color: khaki; */
+        }
+        .nav .line .item3{
+            width: 90px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: left;
+            /* background-color: ivory; */
+            box-sizing: border-box;
+        }
+        .nav .line .item4{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: right;
+            /* background-color: ivory; */
+        }
+        .nav .line .item5{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: right;
+            /* background-color: khaki; */
+        }
+        .nav .line .item6{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: right;
+            /* background-color: ivory; */
+        }
+        .nav .line .item7{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: right;
+            /* background-color: khaki; */
+        }
+        .nav .line .item8{
+            width: 70px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            float: right;
+            /* background-color: ivory; */
+        }
+        /* 导航条结束 */
+        /* 搜索行开始 */
+        .header .line{
+            height: 115px;
+            /* background-color: greenyellow; */
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .header .line .xllogo{
+            float: left;
+        }
+        .header .line .list{
+            float: left;
+            font-size: 16px;
+            color: grey;
+            height: 35px;
+            width: 80px;
+            line-height: 35px;
+            border: 1px solid gray;
+            border-radius: 2px 0 0 2px;
+            text-align: center;
+            padding-left: 8px;
+            margin: 8px 0px 0px 14px;
+            box-sizing: border-box;
+        }
+        .header .line .button1{
+            margin-left: 8px;
+        }
+        .header .line .search{
+            float: left;
+            height: 33.4px;
+            width: 250px;
+            margin-top: 8px;
+        }
+        .header .line .button2{
+            float: left;
+            height: 35px;
+            width: 66px;
+            margin-top: 8px;
+        }
+        .header .line .button3{
+            float: right;
+        }
+        .header .line .button4{
+            float: right;
+            padding-right: 4px;
+        }
+        /* 搜索行结束 */
+        /* 标签行开始 */
+        .header .label{
+            height: 98px;
+            /* background-color: khaki; */
+        }
+        .header .label .block{
+            width: 175px;
+            height: 80px;
+            /* background-color: lime; */
+            float: left;
+            margin: 8px 8px 0 0;
+        }
+        .header .label .block a{
+            display: inline-block;
+            margin-right: 19px;
+            margin-bottom: 10px;
+        }
+        .header .label .line{
+            float: left;
+            width: 0;
+            height: 67px;
+            margin: 8px 8px 0 0;
+            border-right: 2px solid rgb(206, 203, 67);
+        }
+        .header .ad{
+            overflow: hidden;
+        }
+        /* 标签行结束 */
+        /* 正文部分开始 */
+        .container{
+            width: 970px;
+            height: 550px;
+            /* background-color: lightcoral; */
+            margin: 0 auto;
+        }
+        .container .left{
+            width: 240px;
+            height: 700px;
+            float: left;
+            margin-right: 20px;
+        }
+        .container .left .img{
+            width: 240px;
+            height: 350px;
+            background-image: url(img/315logo.png);
+            text-align: center;
+            position: relative;
+        }
+        .container .left .title{
+            width: 240px;
+            height: 30px;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            line-height: 30px;
+            background-color: rgba(241, 236, 227, 0.8);
+        }
+        .container .left .blank{
+            width: 240px;
+            height: 25px;
+            /* background-color: navy; */
+        }
+        .container .left .ad{
+            width: 240px;
+            height: 85px;
+            /* background-color: olive; */
+        }
+        .container .mid{
+            width: 360px;
+            height: 550px;
+            /* background-color: orchid; */
+            float: left;
+        }
+        .container .mid .nav{
+            width: 360px;
+            height: 36px;
+            background-color: rgb(233, 222, 202);
+            position: relative;
+            border: 1px solid rgba(131, 119, 119, 0.644);
+            box-sizing: border-box;
+            border-left: 0px solid;
+        }
+        .container .mid .nav div{
+            width: 50px;
+            height: 36px;
+            /* background-color: palegreen; */
+            float: left;
+            line-height: 36px;
+            text-align: center;
+        }
+        .container .mid .nav .item3{
+            border-top: 2px solid orange;
+            border-bottom: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid rgb(167, 154, 154);;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .container .mid .nav .blank1{
+            width: 208px;
+            height: 36px;
+            /* background-color: yellow; */
+            float: left;
+        }
+        .container .mid .news1{
+            width: 360px;
+            height: 240px;
+            /* background-color: turquoise; */
+        }
+        .container .mid .news1 .img1,.img2,.img3{
+            width: 100px;
+            height: 70px;
+            /* background-color: tomato; */
+            float: left;
+            margin-top: 30px;
+        }
+        .container .mid .news1 .img1{
+            background-image: url(img/wujing.jpg);
+            margin-right: 30px;
+        }
+        .container .mid .news1 .img2{
+            background-image: url(img/huangma.jpg);
+            margin-right: 30px;
+        }
+        .container .mid .news1 .img3{
+            background-image: url(img/wangyuan.png);
+        }
+        .container .mid .news1 .new{
+            padding-left: 13px;
+            font-size: 14px;
+            padding-top: 110px;
+        }
+        .container .mid .news1 .new li{
+            margin-bottom: 10px;
+
+        }
+        .container .mid .nav .blank2{
+            width: 258px;
+            height: 36px;
+            /* background-color: yellow; */
+            float: left;
+        }
+        .container .mid .news2{
+            width: 105px;
+            height: 235px;
+            /* background-color: teal; */
+
+            overflow: hidden;
+            float: left;
+        }
+        .container .mid .news2 .item1{
+            margin-bottom: 15px;
+        }
+        .container .mid .ad{
+            padding-left: 20px;
+            font-size: 14px;
+            padding-top: 0px;
+            float: left;
+        }
+        .container .mid .ad li{
+            margin-bottom: 7px;
+
+        }
+        .container .right{
+            width: 335px;
+            height: 550px;
+            /* background-color: orchid; */
+            float: right;
+        }
+        .container .right .nav{
+            width: 335px;
+            height: 36px;
+            background-color: rgb(233, 222, 202);
+            position: relative;
+            border: 1px solid rgba(131, 119, 119, 0.644);
+            box-sizing: border-box;
+            border-left: 0px solid;
+        }
+        .container .right .nav div{
+            width: 50px;
+            height: 36px;
+            /* background-color: palegreen; */
+            float: left;
+            line-height: 36px;
+            text-align: center;
+        }
+        .container .right .nav .item{
+            border-top: 2px solid orange;
+            border-bottom: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid rgb(167, 154, 154);
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .container .right .nav .blank{
+            width: 283px;
+            height: 36px;
+            /* background-color: yellow; */
+            float: left;
+        }
+        .container .right .ad1,.ad2{
+            padding-left: 13px;
+            font-size: 14px;
+            padding-top: 0px;
+            float: left;
+        }
+        .container .right .ad1,.ad2 li{
+            margin-bottom: 5px;
+        }
+        .container .right .ad1 li:nth-child(1){
+            margin-top: 8px;
+        }
+        .container .right .ad2 .blank{
+            width: 323px;
+            height: 20px;
+            /* background-color: yellow; */
+            float: left;
+        }
+        /* 正文部分结束 */
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="line">
+            <div class="item1">
+                <a href="">设为首页</a>
+            </div>
+            <div class="item2">
+                <a href="">手机新浪网</a>
+            </div>
+            <div class="item3">
+                <a href="">移动客户端
+                    <select name="" id=""></select>
+                </a>
+            </div>
+            <div class="item4">
+                <a href="">网站导航</a>
+            </div>
+            <div class="item5">
+                <a href="">邮箱
+                    <select name="" id=""></select>
+                </a>
+            </div>
+            <div class="item6">
+                <a href="">博客
+                    <select name="" id=""></select>
+                </a>
+            </div>
+            <div class="item7">
+                <a href="">微博
+                    <select name="" id=""></select>
+                </a>
+            </div>
+            <div class="item8">
+                <a href="">登录</a>
+            </div>
+        </div>
+    </div>  
+    
+    <div class="header">
+        <div class="line">
+            <div>
+                <a class="xllogo" href="http://sina.com.cn"><img src="img/xllogo.png" alt=""></a>
+            </div>
+            <form action="">
+                <div class="list">新闻<select class="button"></select></div>
+                <input class="search" type="text" placeholder="大家都在搜:杨俊毅为什么是个瓜皮？">  
+            </form>
+            <div class="button2"><a href=""><img src="img/searchlogo.png" alt=""></a></div>
+            <div class="button3"><a href=""><img src="img/jubaologo.png" alt=""></a></div>
+            <div class="button4"><a href=""><img src="img/jiazhiguanlogo.jpg" alt=""></a></div>   
+        </div>
+        <div class="label">
+            <div class="block">
+                <div>
+                    <a href=""><strong>新闻</strong></a><a href="">国际</a><a href="">军事</a><a href="">国内</a>
+                </div>
+                <div>
+                    <a href=""><strong>财经</strong></a><a href="">股票</a><a href="">基金</a>外汇<a href=""></a>
+                </div>
+                <div>
+                    <a href=""><strong>科技</strong></a><a href="">手机</a><a href="">探索</a><a href="">众测</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="block">
+                <div>
+                    <a href=""><strong>新闻</strong></a><a href="">国际</a><a href="">军事</a><a href="">国内</a>
+                </div>
+                <div>
+                    <a href=""><strong>财经</strong></a><a href="">股票</a><a href="">基金</a>外汇<a href=""></a>
+                </div>
+                <div>
+                    <a href=""><strong>科技</strong></a><a href="">手机</a><a href="">探索</a><a href="">众测</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="block">
+                <div>
+                    <a href=""><strong>新闻</strong></a><a href="">国际</a><a href="">军事</a><a href="">国内</a>
+                </div>
+                <div>
+                    <a href=""><strong>财经</strong></a><a href="">股票</a><a href="">基金</a>外汇<a href=""></a>
+                </div>
+                <div>
+                    <a href=""><strong>科技</strong></a><a href="">手机</a><a href="">探索</a><a href="">众测</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="block">
+                <div>
+                    <a href=""><strong>新闻</strong></a><a href="">国际</a><a href="">军事</a><a href="">国内</a>
+                </div>
+                <div>
+                    <a href=""><strong>财经</strong></a><a href="">股票</a><a href="">基金</a>外汇<a href=""></a>
+                </div>
+                <div>
+                    <a href=""><strong>科技</strong></a><a href="">手机</a><a href="">探索</a><a href="">众测</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="block">
+                <div>
+                    <a href=""><strong>新闻</strong></a><a href="">国际</a><a href="">军事</a><a href="">国内</a>
+                </div>
+                <div>
+                    <a href=""><strong>财经</strong></a><a href="">股票</a><a href="">基金</a>外汇<a href=""></a>
+                </div>
+                <div>
+                    <a href=""><strong>科技</strong></a><a href="">手机</a><a href="">探索</a><a href="">众测</a>
+                </div>
+            </div>
+        </div>
+        <div class="ad"><img src="img/adlogo.jpg" alt=""></div>
+    </div>
+    
+    <div class="container">
+        <div class="left">
+            <a href="">
+                <div class="img">
+                    <div class="title"><strong>&lt;</strong>&emsp;年315消费维权在行动&emsp;<strong>&gt;</strong></div>
+                </div> 
+            </a>
+            <div class="blank"></div>
+                <div class="ad"></div>    
+        </div>
+        <div class="mid">
+            <div class="nav">
+                <div class="item1">图片</div>
+                <div class="item2">专栏</div>
+                <div class="item3">热点</div>
+                <div class="blank1"></div>
+            </div>
+            
+            <div class="news1">
+                <a href=""><div class="img1"></div></a>
+                <a href=""><div class="img2"></div></a>
+                <a href=""><div class="img3"></div></a>
+                <div class="new">
+                    <ul>
+                        <li>世界跨度最大钢混结合梁斜拉桥合龙 </li>
+                    </ul>
+                    <ul>
+                        <li>青岛胶州湾渔民应对海星“侵袭”</li>
+                    </ul>
+                    <ul>
+                        <li>阿斯利康疫苗又给欧盟“添堵”了</li>
+                    </ul>
+                    <ul>
+                        <li>姚晨黑色西装飒爽个性 许魏洲白色套装简约高级</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nav">
+                <div class="item3">视频</div>
+                <div class="item1">综艺</div>
+                <div class="blank2"></div>
+            </div>
+            <div class="news2">
+                <a href=""><img class="item1" src="img/singer1.jpg" alt=""></a>
+                <a href=""><img src="img/singer2.jpg" alt=""></a>
+            </div>
+            <div class="ad">
+                <ul>
+                    <li>创造营：一公莲舞台效果超燃</li>
+                </ul>
+                <ul>
+                    <li>青你：英雄舞台战损妆气势强</li>
+                </ul>
+                <ul>
+                    <li>姐姐：周笔畅组半夜练舞被夸</li>
+                </ul>
+                <ul>
+                    <li>王牌：唐嫣谈罗晋给的安全感</li>
+                </ul>
+                <ul>
+                    <li>百变：沈梦辰模仿宁静到位</li>
+                </ul>
+                <ul>
+                    <li>哥哥：檀健次再唱猴笼更自信</li>
+                </ul>
+                <ul>
+                    <li>明侦：魏晨再唱少年游动听</li>
+                </ul>
+                <ul>
+                    <li>演员：马嘉祺体验孤独症角色</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="right">
+            <div class="nav">
+                <div class="item">新闻</div>
+                <div class="blank"></div>
+            </div>
+            <div class="ad1">
+                <ul>
+                    <li>习近平向孟加拉国庆祝独立50周年发表致辞</li>
+                </ul>
+                <ul>
+                    <li>功以才成 业由才广 读懂习近平为什么强调科技创新</li>
+                </ul>
+                <ul>
+                    <li>读懂2021年减税降费政策 记一场隆重高原春耕典礼</li>
+                </ul>
+                <ul>
+                    <li>点燃青少年党史热情 冬奥会 奋斗百年路 启航新征程</li>
+                </ul>
+                <ul>
+                    <li>美对中方官员金融制裁 中方：已采取反制措施</li>
+                </ul>
+                <ul>
+                    <li>美日发联合声明点名攻击中国 赵立坚狠批日本</li>
+                </ul>
+                <ul>
+                    <li>中代表在人权理事会敦促美国停止各种侵犯人权行为</li>
+                </ul>
+                <ul>
+                    <li>新冠溯源报告发布前 中方专家组长释放大量信息！</li>
+                </ul>
+            </div>
+            <div class="ad2">
+                <div class="blank"></div>
+                <ul>
+                    <li>台“新防长”口吐狂言“大陆打多久就奉陪多久”</li>
+                </ul>
+                <ul>
+                    <li>最新！北京市复工复产常态化防控措施来了！</li>
+                </ul>
+                <ul>
+                    <li>美军司令：中国威胁已经逼近我国边境！</li>
+                </ul>
+                <ul>
+                    <li>黄峥辞任拼多多董事长投身科研 现任CEO陈磊接棒</li>
+                </ul>
+                <ul>
+                    <li>人民日报：商标抢注到英烈头上！脸都不要了？</li>
+                </ul>
+                <ul>
+                    <li>一图读懂:40天两起命案 谁来平息网约车司乘矛盾</li>
+                </ul>
+                <ul>
+                    <li>新浪新闻聚焦母婴服务：更好地关爱下一代成长</li>
+                </ul>
+                <ul>
+                    <li>中国在这个领域将超过美国？“中国威胁论”又来了</li>
+                </ul>
+                <ul>
+                    <li>“拉面哥”为什么这样火？“热流量”背后的冷思考</li>
+                </ul>
+                <ul>
+                    <li>杭州民警夫妻逛西湖 妻子突然拉着丈夫：快去救人</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
